@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch-0.2.14.js"></script>
+  <style>
+    div{
+      width:100px;height:100px;background: #ccc;margin:10px auto;
+      transition: .5s ease all
+    }
+  </style>
+  <script>
+
+    $(function(){
+      var box2 = document.querySelectorAll('div')[1]
+
+      touch.on($('div:nth-child(1)'),'swipeleft',function(ev){
+        // this==原生
+        $(this).css('background','#399')
+      })
+
+      touch.on(box2,'swipeup',function(ev){
+        // this==原生
+        $(this).css('background','#399')
+      })
+
+      touch.on('div:nth-child(3)','swiperight',function(ev){
+        // this==原生
+        $(this).css('background','#399')
+      })
+
+      touch.on('div:nth-child(4)','hold',function(ev){
+        $(this).css('background','#399')
+      })
+
+    })
+
+
+
+  </script>
+</head>
+<body>
+
+  <div>box1</div>
+  <div>box2</div>
+  <div>box3</div>
+  <div>box4</div>
+  
+</body>
+</html>
